@@ -1,0 +1,4 @@
+.rightbar {
+    grid-area: right;
+    background-color: darkslateblue;
+}
