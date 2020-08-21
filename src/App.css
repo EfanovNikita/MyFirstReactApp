@@ -2,7 +2,7 @@
   display: grid;
   grid-template-areas: "left center right";
   grid-template-rows: min(700px);
-  grid-template-columns: 1fr 20fr 1fr;
+  grid-template-columns: 2fr 28fr 2fr;
 }
 
 .App .content {

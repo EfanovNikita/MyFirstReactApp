@@ -2,3 +2,22 @@
     grid-area: left;
     background-color: aquamarine;
 }
+
+.nav .blockButtons {
+    position: fixed;
+    left: 1.5%;
+    width: 3%;
+    border: 2px solid black;
+    border-radius: 5px;
+    margin: 0;
+}
+
+.nav .blockButtons .button {
+    width: 50%;
+    margin: 1ex auto;
+    border: 1px solid orangered;
+}
+
+.nav .blockButtons .activeButton {
+    color: gold;
+}
