@@ -1,23 +1,20 @@
 .nav {
-    grid-area: left;
-    background-color: aquamarine;
+    background-color: rgb(32, 253, 180);
+    display: grid;
+    grid-auto-rows: 30px;
+    grid-gap: 5px;
 }
 
-.nav .blockButtons {
-    position: fixed;
-    left: 1.5%;
-    width: 3%;
-    border: 2px solid black;
-    border-radius: 5px;
-    margin: 0;
+.nav div {
+    border: 1px solid black;
+    background-color: saddlebrown;
 }
 
-.nav .blockButtons .button {
-    width: 50%;
-    margin: 1ex auto;
-    border: 1px solid orangered;
+.nav div a {
+    padding: 5px;
+    color: white;
 }
 
-.nav .blockButtons .activeButton {
-    color: gold;
+.nav div a:visited {
+    text-decoration: line-through;
 }

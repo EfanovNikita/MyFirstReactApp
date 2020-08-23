@@ -1,11 +1,15 @@
-.App {
+
+.wrapper {
+  min-height: 100vh;
   display: grid;
-  grid-template-areas: "left center right";
-  grid-template-rows: min(700px);
-  grid-template-columns: 2fr 28fr 2fr;
+  grid-template: minmax(100px, auto) 1fr minmax(70px, auto) / 1fr;
+  grid-template-areas: "header" "main" "footer";
 }
 
-.App .content {
-  grid-area: center;
+.wrapper .main {
+  grid-area: main;
   background-color: rgb(68, 146, 146);
+  display: grid;
+  grid-template: 1fr / minmax(200px, 10%) auto;
 }
+
