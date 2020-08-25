@@ -13,8 +13,9 @@
 .nav div a {
     padding: 5px;
     color: white;
+    text-decoration: none;
 }
 
 .nav div a:visited {
-    text-decoration: line-through;
+    
 }
