@@ -6,10 +6,3 @@
   grid-template-areas: "header" "main" "footer";
 }
 
-.wrapper .main {
-  grid-area: main;
-  background-color: rgb(68, 146, 146);
-  display: grid;
-  grid-template: 1fr / minmax(200px, 10%) auto;
-}
-

@@ -1,9 +1,9 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { authUserThunk } from '../../../redux/authReducer';
 import { connect } from 'react-redux';
 
 const Profile = (props) => {
-    props.authUserThunk();
+
     return (
         <div>
             {props.login}
@@ -22,4 +22,4 @@ let mapStateToProps = (state) => ({
 });
 
 
-export default connect(mapStateToProps, { authUserThunk } )(Profile)
+export default connect(mapStateToProps, {  } )(Profile)

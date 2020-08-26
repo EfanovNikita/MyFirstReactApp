@@ -8,23 +8,22 @@ import Header from './Components/Header/Header';
 import Footer from './Components/Footer/Footer';
 import { Provider } from 'react-redux';
 import store from './redux/store';
+import MainConteiner from './Components/Contentbar/MainContainer';
 
-function App() {
-  return (
-    <Provider store={store}>
-    <BrowserRouter>
-      <div className="wrapper">
-        <Header />
-        <div className="main">
-          <Navbar />
-          <Route path='/profile' render={() => <Profile />} />
-          <Route path='/users' render={() => <Users />} />
-        </div>
-        <Footer />
-      </div>
-    </BrowserRouter>
-    </Provider>
-  );
-}
+class App extends React.Component {
+  render() {
+    return (
+      <Provider store={store}>
+        <BrowserRouter>
+          <div className="wrapper">
+            <Header />
+            <MainConteiner />
+            <Footer />
+          </div>
+        </BrowserRouter>
+      </Provider>
+    );
+  }
+};
 
 export default App;
