@@ -17,7 +17,7 @@ class MainContainer extends PureComponent {
         return (
             <div className={style.main}>
                 <Navbar />
-                <Route path='/profile' render={() => <Profile />} />
+                <Route path='/profile/:userId?' render={() => <Profile />} />
                 <Route path='/users' render={() => <Users />} />
             </div>
         )

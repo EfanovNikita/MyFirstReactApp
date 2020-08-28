@@ -1,9 +1,6 @@
 import React from 'react';
 import './App.css';
-import Navbar from './Components/Leftbar/Navbar';
-import Profile from './Components/Contentbar/Profile/Profile';
-import { BrowserRouter, Route } from 'react-router-dom';
-import Users from './Components/Contentbar/Users/Users';
+import { BrowserRouter } from 'react-router-dom';
 import Header from './Components/Header/Header';
 import Footer from './Components/Footer/Footer';
 import { Provider } from 'react-redux';

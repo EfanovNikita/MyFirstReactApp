@@ -1,0 +1,14 @@
+.profileInfo {
+    min-height: 100%;
+    display: grid;
+    grid-template: 1fr / 1fr 2fr;
+}
+
+.profileInfo .gridElem {
+    border: 1px solid black;
+}
+
+.profileInfo .gridBox {
+    display: grid;
+    grid-template: auto / 10% 90%;
+}

@@ -1,25 +1,39 @@
 import React, { useEffect, useState } from 'react';
-import { authUserThunk } from '../../../redux/authReducer';
+import { setProfileThunk } from '../../../redux/profileReducer';
 import { connect } from 'react-redux';
+import ProfileInfo from './ProfileInfo';
+import { compose } from 'redux';
+import { withRouter } from 'react-router-dom';
 
-const Profile = (props) => {
+const Profile = React.memo((props) => {
+
+    let [userId, setUserId] = useState(props.userId);
+
+    useEffect(() => {
+        if (userId && userId !== props.profile.userId) {
+            props.setProfileThunk(userId)
+        }
+    }, [userId]);
+
+    useEffect(() => {
+        if (props.match.params.userId) {
+            setUserId(props.match.params.userId)
+        } else {
+            setUserId(props.userId)
+        };
+    }, [props.match.params.userId, props.userId])
 
     return (
         <div>
-            {props.login}
-            {props.email}
-            {props.userId}
-            {props.isAuth}
+            {!props.profile ? <p>Loading</p> : <ProfileInfo profile={props.profile} /> }
         </div>
     )
-}
+});
 
 let mapStateToProps = (state) => ({
     userId: state.auth.userId,
-    login: state.auth.login,
-    email: state.auth.email,
-    isAuth: state.auth.isAuth
+    profile: state.profilePage.profile,
 });
 
 
-export default connect(mapStateToProps, {  } )(Profile)
+export default compose(withRouter, connect(mapStateToProps, { setProfileThunk }))(Profile)
