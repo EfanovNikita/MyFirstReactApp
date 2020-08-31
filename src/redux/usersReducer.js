@@ -27,9 +27,9 @@ const usersReducer = (state=initialState, action) => {
 const setUsers = (users) => ({type: SET_USERS, users});
 const setTotalCount = (totalCount) => ({type: SET_TOTAL_COUNT, totalCount});
 
-export const getUsersThunk = (page, friend, term) => {
+export const getUsersThunk = (page, friend=false, term='',count=10) => {
     return (dispatch) => {
-        userAPI.getUsers(page, friend, term).then(response => {
+        userAPI.getUsers(page, friend, term, count).then(response => {
             let users = response.data.items;
             let totalCount = response.data.totalCount;
             dispatch(setUsers(users));
