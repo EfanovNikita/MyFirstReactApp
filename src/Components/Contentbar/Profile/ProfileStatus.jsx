@@ -7,9 +7,9 @@ const ProfileStatus = (props) => {
     let [status, setStatus] = useState(props.status);
     let [editMode, setEditMode] = useState(false);
 
-    useEffect(() => {
+    /*useEffect(() => {
         props.getStatusThunk(props.userId)
-    }, [props.userId]);
+    }, [props.userId]);*/
 
     useEffect(() => {
         setStatus(props.status)
@@ -19,7 +19,7 @@ const ProfileStatus = (props) => {
         setStatus(e.target.value)
     };
 
-    let onBlurStatus = (e) => {
+    let offEditMode = (e) => {
         props.setStatusThunk(e.target.value);
         setEditMode(false);
     };
@@ -32,7 +32,7 @@ const ProfileStatus = (props) => {
         <div>
             {props.authId !== props.userId ? <div>{status}</div> :
                 editMode ? 
-                <input value={status} onChange={onChangeStatus} onBlur={onBlurStatus} autoFocus={true} ></input> :
+                <input value={status} onChange={onChangeStatus} onBlur={offEditMode} autoFocus={true} ></input> :
                 <div onDoubleClick={onEditMode}>{status || '-----'}</div>
             }
         </div>

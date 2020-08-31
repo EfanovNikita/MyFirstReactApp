@@ -12,7 +12,7 @@ export const authAPI = {
     me() {
         return instance.get('auth/me')      
     }
-}
+};
 
 export const profileAPI = {
     getProfile(id) {
@@ -23,5 +23,11 @@ export const profileAPI = {
     },
     setStatus(status) {
         return instance.put(`/profile/status`, {status})
+    }
+};
+
+export const userAPI = {
+    getUsers(page, friend=false, term='') {
+        return instance.get(`users`, {page, term, friend});
     }
 }
