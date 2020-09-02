@@ -2,10 +2,11 @@ import { userAPI } from "../api/api";
 
 const SET_USERS = 'SET-USERS';
 const SET_TOTAL_COUNT = 'SET-TOTAL-COUNT';
+const SET_FOLLOW = 'SET-FOLLOW';
 
 let initialState = {
     users: null,
-    totalCount: null
+    totalCount: null,
 };
 
 const usersReducer = (state=initialState, action) => {
@@ -20,12 +21,24 @@ const usersReducer = (state=initialState, action) => {
                 ...state,
                 totalCount: action.totalCount
             }
+        case SET_FOLLOW:
+            return {
+                ...state,
+                users: state.users.map(item => { 
+                    if (item.id === action.userId) {
+                        item.followed = action.follow;
+                        return item
+                    } else {
+                        return item
+                    }})
+            }
         default: return state
     }
-}
+};
 
 const setUsers = (users) => ({type: SET_USERS, users});
 const setTotalCount = (totalCount) => ({type: SET_TOTAL_COUNT, totalCount});
+const setFollowed = (follow, userId) => ({type: SET_FOLLOW, follow, userId});
 
 export const getUsersThunk = (page, friend=false, term='',count=10) => {
     return (dispatch) => {
@@ -36,6 +49,24 @@ export const getUsersThunk = (page, friend=false, term='',count=10) => {
             dispatch(setTotalCount(totalCount));
         })
     }
-}
+};
+
+export const setFollowedThunk = (follow, userId) => {
+    return (dispatch) => {
+        if (follow) {
+            userAPI.follow(userId).then(response => {
+                if (response.data.resultCode === 0) {
+                    dispatch(setFollowed(true, userId))
+                }
+            })
+        } else {
+            userAPI.unfollow(userId).then(response => {
+                if (response.data.resultCode === 0) {
+                    dispatch(setFollowed(false, userId))
+                }
+            })
+        }
+    }
+};
 
 export default usersReducer;
