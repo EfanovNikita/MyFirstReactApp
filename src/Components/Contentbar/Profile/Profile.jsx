@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import ProfileInfo from './ProfileInfo';
 import { compose } from 'redux';
 import { withRouter } from 'react-router-dom';
+import LoginHook from '../../Hooks/LoginHook';
 
 const Profile = React.memo((props) => {
 
@@ -37,4 +38,4 @@ let mapStateToProps = (state) => ({
 });
 
 
-export default compose(withRouter, connect(mapStateToProps, { setProfileThunk, getStatusThunk }))(Profile)
+export default compose(withRouter, LoginHook, connect(mapStateToProps, { setProfileThunk, getStatusThunk }))(Profile)

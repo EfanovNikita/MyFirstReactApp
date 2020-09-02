@@ -6,6 +6,7 @@ import Navbar from '../Leftbar/Navbar';
 import Profile from './Profile/Profile';
 import Users from './Users/Users';
 import style from './MainContainer.module.css';
+import Login from '../Login/Login';
 
 class MainContainer extends PureComponent {
 
@@ -14,21 +15,23 @@ class MainContainer extends PureComponent {
     }
 
     render() {
+        /*if (this.props.isLoading) {
+            return <div>Loading</div>
+        }*/
         return (
             <div className={style.main}>
                 <Navbar />
                 <Route path='/profile/:userId?' render={() => <Profile />} />
                 <Route path='/users' render={() => <Users />} />
+                <Route path='/login' render={() => <Login />} />
             </div>
         )
     }
 }
 
 let mapStateToProps = (state) => ({
-    userId: state.auth.userId,
-    login: state.auth.login,
-    email: state.auth.email,
-    isAuth: state.auth.isAuth
+    isAuth: state.auth.isAuth,
+    isLoading: state.auth.isLoading
 });
 
 export default connect(mapStateToProps, { authUserThunk })(MainContainer)
