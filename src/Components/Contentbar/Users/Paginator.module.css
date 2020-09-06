@@ -1,0 +1,28 @@
+.paginatorBox {
+    display: grid;
+    grid-template: auto / 1fr 1fr 1fr;
+    width: auto;
+    margin: 5px 0;
+}
+
+.pages {
+    grid-column: 2 / 3;
+    display: grid;
+    grid-gap: 1px;
+    grid-template: 1fr / repeat(9, 1fr);
+}
+
+.button {
+    display: block;
+    width: auto;
+    height: auto;
+    background-color: #7dbdf8;
+    color: black;
+    text-align: center;
+    cursor: pointer;
+}
+
+.button:active {
+    background-color: #4d8ec7;
+    color: black;
+}

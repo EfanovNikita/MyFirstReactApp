@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import style from './Paginator.module.css';
 
 const Paginator = (props) => {
     let countPages = Math.ceil(props.totalCount / 10);
@@ -10,7 +11,12 @@ const Paginator = (props) => {
     };
 
     for (let i = 1; i <= countPages; i++) {
-        let page = <span onClick={onClickPage} key={i}> {i} </span>;
+        let page;
+        if (i === props.currentPage) {
+            page = <div className={style.button} onClick={onClickPage} key={i}><b> {i} </b></div>;
+        } else {
+            page = <div className={style.button} onClick={onClickPage} key={i}><span> {i} </span></div>;
+        };
         pages.push(page);
     };
 
@@ -27,12 +33,16 @@ const Paginator = (props) => {
     };
 
     return (
-        <div>
-            {portion !== 1 ? <button onClick={() => setPortion(1)}>First</button> : ''}
-            {portion !== 1 ? <button onClick={() => setPortion(portion - 1)}>Prev.</button> : ''}
-            {portionsPages}
-            {portion !== countPortions ? <button onClick={() => setPortion(portion + 1)}>Next</button> : ''}
-            {portion !== countPortions ? <button onClick={() => setPortion(countPortions)}>Last</button> : ''}
+        <div className={style.paginatorBox}>
+            <div className={style.pages}>
+                {portion !== 1 ? <div onClick={() => setPortion(1)} className={style.button}>First</div> : <div></div>}
+                {portion !== 1 ? <div onClick={() => setPortion(portion - 1)} className={style.button}>Prev.</div> : <div></div>}
+            
+                {portionsPages}
+            
+                {portion !== countPortions ? <div onClick={() => setPortion(portion + 1)} className={style.button}>Next</div> : ''}
+                {portion !== countPortions ? <div onClick={() => setPortion(countPortions)} className={style.button}>Last</div> : ''}
+            </div>
         </div>
     )
 };

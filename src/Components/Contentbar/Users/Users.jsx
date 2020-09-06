@@ -35,7 +35,7 @@ const Users = (props) => {
 
     return (
         <div>
-            <Paginator onSetPage={onSetPage} totalCount={props.totalCount} />
+            <Paginator onSetPage={onSetPage} totalCount={props.totalCount} currentPage={page} />
             {users}
         </div>
     )

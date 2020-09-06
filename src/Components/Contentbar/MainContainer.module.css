@@ -1,7 +1,7 @@
 .main {
     grid-area: main;
-    background-color: rgb(68, 146, 146);
+    background-color: #f0daa4;
     display: grid;
-    grid-template: 1fr / minmax(200px, 10%) auto;
+    grid-template: 1fr / minmax(100px, 200px) auto;
 }
   

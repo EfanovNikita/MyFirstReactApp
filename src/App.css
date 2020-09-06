@@ -2,7 +2,7 @@
 .wrapper {
   min-height: 100vh;
   display: grid;
-  grid-template: minmax(100px, auto) 1fr minmax(70px, auto) / 1fr;
+  grid-template: minmax(70px, auto) 1fr minmax(70px, auto) / 1fr;
   grid-template-areas: "header" "main" "footer";
 }
 
