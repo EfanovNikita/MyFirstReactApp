@@ -1,4 +1,21 @@
 .header {
     grid-area: header;
     background-color: #7dbdf8;
+    display: grid;
+    grid-template: 1fr / repeat(6, 1fr);
+}
+
+.loginButton {
+    grid-column: 5/6;
+    padding: 5px;
+}
+
+.loginButton button {
+    background-color: #f0daa4;
+    float: right;
+    cursor: pointer;
+}
+
+.loginButton button:active {
+    background-color: #be9e4c;
 }

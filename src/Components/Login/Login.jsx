@@ -1,9 +1,10 @@
 import React from 'react';
 import { useFormik } from 'formik';
 import { LoginThunk } from '../../redux/authReducer';
-import validator from '../../validators/validatorLogin';
+import validate from '../../validators/validatorLogin';
 import { connect } from 'react-redux';
 import { Redirect } from 'react-router-dom';
+import style from './Login.module.css';
 
 const Login = (props) => {
 
@@ -12,7 +13,7 @@ const Login = (props) => {
             email: '',
             password: ''
         },
-        validator,
+        validate,
         onSubmit: values => {
             props.LoginThunk(values)
         }
@@ -23,26 +24,32 @@ const Login = (props) => {
     };
 
     return (
-        <form onSubmit={formik.handleSubmit}>
+        <form onSubmit={formik.handleSubmit} className={style.gridBox}>
             <label htmlFor='email'>Email</label>
-            <input 
+            <input
                 id='email'
                 name='email'
                 type='email'
                 onChange={formik.handleChange}
+                onBlur={formik.handleBlur}
                 value={formik.values.email}
             />
-            {formik.errors.email ? <div>{formik.errors.email}</div> : null}
+            {formik.touched.email && formik.errors.email
+                ? <div className={style.error}>{formik.errors.email}</div>
+                : <div></div>}
             <label htmlFor='password'>Password</label>
-            <input 
+            <input
                 id='password'
                 name='password'
                 type='password'
                 onChange={formik.handleChange}
+                onBlur={formik.handleBlur}
                 value={formik.values.password}
             />
-            {formik.errors.password ? <div>{formik.errors.password}</div> : null}
-            <button type='submit'>Submit</button>
+            {formik.touched.password && formik.errors.password
+                ? <div className={style.error}>{formik.errors.password}</div>
+                : <div></div>}
+            <button type='submit'>Войти</button>
         </form>
     )
 }

@@ -2,6 +2,6 @@
     grid-area: main;
     background-color: #f0daa4;
     display: grid;
-    grid-template: 1fr / minmax(100px, 200px) auto;
+    grid-template: 1fr / minmax(50px, 1fr) minmax(auto, 6fr);
 }
   

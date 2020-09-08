@@ -1,0 +1,21 @@
+.gridBox {
+    display: grid;
+    grid-template: 25px 40px 30px 25px 40px 30px 40px / 1fr;
+    width: 300px;
+    height: 300px;
+    margin: auto 25%;
+}
+
+.gridBox label {
+    padding-left: 10px;
+}
+
+.gridBox button {
+    background-color: #7dbdf8;
+    cursor: pointer;
+}
+
+.gridBox .error {
+    color: red;
+    padding-left: 10px;
+}

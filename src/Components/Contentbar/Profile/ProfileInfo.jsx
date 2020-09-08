@@ -17,16 +17,13 @@ const ProfileInfo = (props) => {
     
     return (
         <div className={style.profileInfo}>
-            <div className={style.gridElem}><img src={largePhoto} alt='avatar'></img></div>
+            <div className={style.photoBox}><img src={largePhoto} alt='avatar' className={style.photo}></img></div>
             <div className={style.gridBox}>
-                <div className={style.gridElem} ><p>Name</p></div>
                 <div className={style.gridElem} ><p>{fullName}</p></div>
-                <div className={style.gridElem} ><p>Статус</p></div>
-                <div className={style.gridElem} ><ProfileStatus userId={props.profile.userId} /></div>
+                <div className={style.gridElem} ><p>Статус: <ProfileStatus userId={props.profile.userId} /></p></div>
                 <div className={style.gridElem} ><p>Vk</p></div>
-                <div className={style.gridElem} ><p>{fullName}</p></div>
                 <div className={style.gridElem} ><p>YouTube</p></div>
-                <div className={style.gridElem} ><p>{fullName}</p></div>
+                <div className={style.gridElem} ><p>AboutMe</p></div>
             </div>
         </div>
     )

@@ -59,6 +59,18 @@ export const LoginThunk = ({email, password}) => {
             }
         })
     }
+};
+
+export const LogoutThunk = () => {
+    return (dispatch) => {
+        dispatch(setIsLoading(true));
+        authAPI.logout().then(response => {
+            if(response.data.resultCode === 0) {
+                dispatch(setAuthUserData(null, null, null, false));
+            }
+            dispatch(setIsLoading(false));
+        })
+    }
 }
 
 export default authReducer;
