@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { getUsersThunk, setFollowedThunk } from '../../../redux/usersReducer';
 import User from './User';
 import Paginator from './Paginator';
+import Preloader from '../../Images/Preloader';
 
 const Users = (props) => {
 
@@ -33,12 +34,19 @@ const Users = (props) => {
         setPage(page);
     };
 
-    return (
-        <div>
-            <Paginator onSetPage={onSetPage} totalCount={props.totalCount} currentPage={page} />
-            {users}
-        </div>
-    )
+    if (props.users) {
+        return (
+            <div>
+                <Paginator onSetPage={onSetPage}
+                    totalCount={props.totalCount} currentPage={page} />
+                {users}
+            </div>
+        )
+    } else {
+        return (
+            <Preloader />
+        )
+    }
 }
 
 let mapStateToProps = (state) => ({

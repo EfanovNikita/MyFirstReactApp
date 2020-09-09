@@ -15,9 +15,6 @@ class MainContainer extends PureComponent {
     }
 
     render() {
-        /*if (this.props.isLoading) {
-            return <div>Loading</div>
-        }*/
         return (
             <div className={style.main}>
                 <Navbar />

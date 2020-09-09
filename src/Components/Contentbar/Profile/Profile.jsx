@@ -5,6 +5,7 @@ import ProfileInfo from './ProfileInfo';
 import { compose } from 'redux';
 import { withRouter } from 'react-router-dom';
 import LoginHook from '../../Hooks/LoginHook';
+import Preloader from '../../Images/Preloader';
 
 const Profile = React.memo((props) => {
 
@@ -27,7 +28,7 @@ const Profile = React.memo((props) => {
 
     return (
         <div>
-            {!props.profile ? <p>Loading</p> : <ProfileInfo profile={props.profile} /> }
+            {!props.profile ? <Preloader /> : <ProfileInfo profile={props.profile} />}
         </div>
     )
 });
@@ -38,4 +39,5 @@ let mapStateToProps = (state) => ({
 });
 
 
-export default compose(withRouter, LoginHook, connect(mapStateToProps, { setProfileThunk, getStatusThunk }))(Profile)
+export default compose(withRouter, LoginHook,
+    connect(mapStateToProps, { setProfileThunk, getStatusThunk }))(Profile)
