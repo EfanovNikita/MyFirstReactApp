@@ -12,8 +12,8 @@ export const authAPI = {
     me() {
         return instance.get('auth/me')      
     },
-    login(email, password) {
-        return instance.post('auth/login', {email, password})
+    login(email, password, rememberMe=false, captcha='') {
+        return instance.post('auth/login', {email, password, rememberMe, captcha})
     },
     logout() {
         return instance.delete('auth/login')
@@ -22,13 +22,16 @@ export const authAPI = {
 
 export const profileAPI = {
     getProfile(id) {
-        return instance.get(`/profile/${id}`)
+        return instance.get(`profile/${id}`)
+    },
+    setProfile(alteredProfile) {
+        return instance.put(`profile`, alteredProfile)
     },
     getStatus(id) {
-        return instance.get(`/profile/status/${id}`)
+        return instance.get(`profile/status/${id}`)
     },
     setStatus(status) {
-        return instance.put(`/profile/status`, {status})
+        return instance.put(`profile/status`, {status})
     }
 };
 
@@ -41,5 +44,11 @@ export const userAPI = {
     },
     unfollow(userId) {
         return instance.delete(`follow/${userId}`)
+    }
+};
+
+export const securityAPI = {
+    getCaptchaUrl() {
+        return instance.get('security/get-captcha-url')
     }
 }

@@ -11,7 +11,8 @@ const Login = (props) => {
     const formik = useFormik({
         initialValues: {
             email: '',
-            password: ''
+            password: '',
+            captcha: ''
         },
         validate,
         onSubmit: values => {
@@ -49,14 +50,25 @@ const Login = (props) => {
             {formik.touched.password && formik.errors.password
                 ? <div className={style.error}>{formik.errors.password}</div>
                 : <div></div>}
+            {props.captchaURL && <img src={props.captchaURL} alt='captcha' />}
+            {props.captchaURL &&
+                <input id='captcha' name='captcha' type='text' 
+                    onChange={formik.handleChange}
+                    onBlur={formik.handleBlur}
+                    value={formik.values.captcha}
+                />
+            }
             <button type='submit'>Войти</button>
+            {props.errorSubmit && <div className={style.error} >{props.errorSubmit}</div>}
         </form>
     )
 }
 
 let mapStateToProps = (state) => ({
     isAuth: state.auth.isAuth,
-    isLoading: state.auth.isLoading
+    isLoading: state.auth.isLoading,
+    captchaURL: state.auth.captchaURL,
+    errorSubmit: state.auth.errorSubmit
 })
 
 export default connect(mapStateToProps, { LoginThunk })(Login);

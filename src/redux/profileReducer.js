@@ -58,4 +58,20 @@ export const setStatusThunk = (status) => {
     }
 };
 
+export const setProfileChangeThunk = (profileChange) => {  
+    return (dispatch, getState) => {
+        let alteredProfile = {
+            ...getState().profilePage.profile,
+            ...profileChange
+        };
+        profileAPI.setProfile(alteredProfile).then(response => {
+            if (response.data.resultCode === 0) {
+                dispatch(setProfileData(alteredProfile))
+            } else {
+                console.log(response.data)
+            }
+        })
+    }
+}
+
 export default profileReducer;
