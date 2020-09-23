@@ -56,6 +56,8 @@ export const authUserThunk = () => {
                 dispatch(setAuthUserData(id, email, login, true));
             }
             dispatch(setIsLoading(false));
+        }).catch(error => {
+            console.log(error);
         })
     }
 };
@@ -71,6 +73,8 @@ export const LoginThunk = ({email, password, rememberMe, captcha}) => {
                         dispatch(setAuthUserData(id, email, login, true));
                     }
                     dispatch(setIsLoading(false));
+                }).catch(error => {
+                    console.log(error);
                 })
             } else if (response.data.resultCode === 10) {
                 securityAPI.getCaptchaUrl().then(response => {
@@ -82,6 +86,8 @@ export const LoginThunk = ({email, password, rememberMe, captcha}) => {
                 let err = response.data.messages;
                 dispatch(setErrorSubmit(err));
             }
+        }).catch(error => {
+            console.log(error);
         })
     }
 };
@@ -94,6 +100,8 @@ export const LogoutThunk = () => {
                 dispatch(setAuthUserData(null, null, null, false));
             }
             dispatch(setIsLoading(false));
+        }).catch(error => {
+            console.log(error);
         })
     }
 };

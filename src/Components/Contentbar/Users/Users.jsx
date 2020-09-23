@@ -24,6 +24,7 @@ const Users = (props) => {
                     followed={user.followed}
                     setFollowedThunk={props.setFollowedThunk}
                     isSettingFollow={props.isSettingFollow}
+                    isAuth={props.isAuth}
                     key={user.id} />
             })
         };
@@ -52,7 +53,8 @@ const Users = (props) => {
 let mapStateToProps = (state) => ({
     users: state.usersPage.users,
     totalCount: state.usersPage.totalCount,
-    isSettingFollow: state.usersPage.isSettingFollow
+    isSettingFollow: state.usersPage.isSettingFollow,
+    isAuth: state.auth.isAuth
 })
 
 export default connect(mapStateToProps, { getUsersThunk, setFollowedThunk })(Users);

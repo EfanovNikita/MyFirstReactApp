@@ -1,6 +1,6 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useFormik } from 'formik';
-import { useState } from 'react';
+import style from './ProfileInfo.module.css';
 
 const ProfileContacts = ({ profile }) => {
     return (
@@ -9,8 +9,9 @@ const ProfileContacts = ({ profile }) => {
             <div><b>В поисках работы:</b> {profile.lookingForAJob ? 'Да' : 'Нет'}</div>
             <div><b>Мои навыки:</b> {profile.lookingForAJobDescription} </div>
             <div><b>Контакты:</b> {Object.keys(profile.contacts).map(key => {
-                return <div key={key}><b>{key}</b><p><a href={profile.contacts[key]}>{profile.contacts[key] || '------'}</a></p></div>
-            })}</div>
+                return <div key={key} className={style.contacts}><p><b>{key}:   </b><a href={profile.contacts[key]}>{profile.contacts[key] || '------'}</a></p></div>
+            })}
+            </div>
         </div>
     )
 }
@@ -50,8 +51,8 @@ const ProfileContactsForm = ({ profile, setEditMode, setProfileChange }) => {
     return (
         <form onSubmit={formik.handleSubmit}>
             <div>
-                <label htmlFor='aboutMe'><b>Обо мне:</b></label>
-                <input 
+                <label htmlFor='aboutMe'><b>Обо мне: </b></label>
+                <input
                     type='text'
                     id='aboutMe'
                     name='aboutMe'
@@ -61,7 +62,7 @@ const ProfileContactsForm = ({ profile, setEditMode, setProfileChange }) => {
                 />
             </div>
             <div>
-                <label htmlFor='lookingForAJob'><b>Looking for a job:</b></label>
+                <label htmlFor='lookingForAJob'><b>В поисках работы: </b></label>
                 <input
                     type='radio'
                     id='lookingForAJob'
@@ -80,9 +81,9 @@ const ProfileContactsForm = ({ profile, setEditMode, setProfileChange }) => {
                 ></input> нет
             </div>
 
-            <div> 
-                <label htmlFor='lookingForAJobDescription'><b>Мои навыки:</b></label>
-                <input 
+            <div>
+                <label htmlFor='lookingForAJobDescription'><b>Мои навыки: </b></label>
+                <input
                     id='lookingForAJobDescription'
                     name='lookingForAJobDescription'
                     type='textarea'
@@ -95,20 +96,23 @@ const ProfileContactsForm = ({ profile, setEditMode, setProfileChange }) => {
                 <b>Контакты:</b>
                 {Object.keys(profile.contacts).map(key => {
                     return (
-                        <div key={key}>
-                            <label htmlFor={`contacts.${key}`}><b>{key}</b></label>
-                            <input
-                                id={`contacts.${key}`}
-                                name={`contacts.${key}`}
-                                type='text'
-                                value={formik.values.contacts[key]}
-                                onChange={formik.handleChange}
-                                onBlur={formik.handleBlur}
-                            />
+                        <div key={key} className={style.contacts}>
+                            <p>
+                                <label htmlFor={`contacts.${key}`}><b>{key}: </b></label>
+                                <input
+                                    id={`contacts.${key}`}
+                                    name={`contacts.${key}`}
+                                    type='text'
+                                    value={formik.values.contacts[key]}
+                                    onChange={formik.handleChange}
+                                    onBlur={formik.handleBlur}
+                                />
+                            </p>
                         </div>
                     )
-                })}</div>
-            <button type='submit'>Сохранить</button>
+                })}
+            </div>
+            <button type='submit' className={style.button}>Сохранить</button>
         </form>
     )
 }
@@ -122,7 +126,7 @@ const ContactsContainer = ({ profile, isOwner, setProfileChange }) => {
             {!isOwner ? <ProfileContacts profile={profile} />
                 : isEditMode ? <ProfileContactsForm profile={profile} setEditMode={setEditMode} setProfileChange={setProfileChange} />
                     : <ProfileContacts profile={profile} />}
-            {!isEditMode && isOwner ? <button onClick={() => { setEditMode(true) }}>Редактировать</button> : null}
+            {!isEditMode && isOwner ? <button onClick={() => { setEditMode(true) }} className={style.button}>Редактировать</button> : null}
         </div>
     )
 }

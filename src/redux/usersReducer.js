@@ -47,6 +47,8 @@ export const getUsersThunk = (page, friend=false, term='',count=10) => {
             let totalCount = response.data.totalCount;
             dispatch(setUsers(users));
             dispatch(setTotalCount(totalCount));
+        }).catch(error => {
+            console.log(error);
         })
     }
 };
@@ -58,12 +60,16 @@ export const setFollowedThunk = (follow, userId) => {
                 if (response.data.resultCode === 0) {
                     dispatch(setFollowed(true, userId))
                 }
+            }).catch(error => {
+                console.log(error);
             })
         } else {
             userAPI.unfollow(userId).then(response => {
                 if (response.data.resultCode === 0) {
                     dispatch(setFollowed(false, userId))
                 }
+            }).catch(error => {
+                console.log(error);
             })
         }
     }

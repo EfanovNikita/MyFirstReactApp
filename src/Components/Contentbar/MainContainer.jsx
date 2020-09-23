@@ -1,5 +1,5 @@
 import React, { PureComponent } from 'react';
-import { Route } from 'react-router-dom';
+import { Redirect, Route, Switch } from 'react-router-dom';
 import { authUserThunk } from '../../redux/authReducer';
 import { connect } from 'react-redux';
 import Navbar from '../Leftbar/Navbar';
@@ -18,9 +18,12 @@ class MainContainer extends PureComponent {
         return (
             <div className={style.main}>
                 <Navbar />
-                <Route path='/profile/:userId?' render={() => <Profile />} />
-                <Route path='/users' render={() => <Users />} />
-                <Route path='/login' render={() => <Login />} />
+                <Switch>
+                    <Redirect exact from='/' to='/profile' />
+                    <Route path='/profile/:userId?' render={() => <Profile />} />
+                    <Route path='/users' render={() => <Users />} />
+                    <Route path='/login' render={() => <Login />} />
+                </Switch>
             </div>
         )
     }

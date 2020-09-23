@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { setProfileThunk, getStatusThunk, setProfileChangeThunk } from '../../../redux/profileReducer';
+import { setProfileThunk, getStatusThunk, setProfileChangeThunk, setPhotoThunk } from '../../../redux/profileReducer';
 import { connect } from 'react-redux';
 import ProfileInfo from './ProfileInfo';
 import { compose } from 'redux';
@@ -34,6 +34,7 @@ const Profile = React.memo((props) => {
             {!props.profile
                 ? <Preloader />
                 : <ProfileInfo profile={props.profile} isOwner={isOwner}
+                    setPhotoThunk={props.setPhotoThunk}
                     setProfileChange={props.setProfileChangeThunk} />}
         </div>
     )
@@ -45,4 +46,4 @@ let mapStateToProps = (state) => ({
 });
 
 export default compose(withRouter, LoginHook,
-    connect(mapStateToProps, { setProfileThunk, getStatusThunk, setProfileChangeThunk }))(Profile)
+    connect(mapStateToProps, { setProfileThunk, getStatusThunk, setProfileChangeThunk, setPhotoThunk }))(Profile)

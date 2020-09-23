@@ -32,9 +32,11 @@ const User = (props) => {
                         <img src={avatar} alt='avatar' className={style.avatar}></img>}
                 </NavLink>
                 <div >
-                    {props.followed ?
-                        <button className={style.followButton} onClick={unfollow} disabled={followProgress} >Unfollow</button> :
-                        <button className={style.followButton} onClick={follow} disabled={followProgress} >Follow</button>
+                    {props.isAuth ?
+                        props.followed ?
+                            <button className={style.followButton} onClick={unfollow} disabled={followProgress} >Unfollow</button> :
+                            <button className={style.followButton} onClick={follow} disabled={followProgress} >Follow</button> :
+                        null
                     }
                 </div>
             </div>
