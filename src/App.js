@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import { BrowserRouter } from 'react-router-dom';
+import { BrowserRouter, HashRouter } from 'react-router-dom';
 import Header from './Components/Header/Header';
 import Footer from './Components/Footer/Footer';
 import { Provider } from 'react-redux';
@@ -11,13 +11,13 @@ class App extends React.Component {
   render() {
     return (
       <Provider store={store}>
-        <BrowserRouter>
+        <HashRouter>
           <div className="wrapper">
             <Header />
             <MainConteiner />
             <Footer />
           </div>
-        </BrowserRouter>
+        </HashRouter>
       </Provider>
     );
   }
