@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/EfanovNikita/MyFirstReactApp/static/css/main.11c06f80.chunk.css",
+    "main.js": "/EfanovNikita/MyFirstReactApp/static/js/main.ecf46ba7.chunk.js",
+    "main.js.map": "/EfanovNikita/MyFirstReactApp/static/js/main.ecf46ba7.chunk.js.map",
+    "runtime-main.js": "/EfanovNikita/MyFirstReactApp/static/js/runtime-main.63ed6bad.js",
+    "runtime-main.js.map": "/EfanovNikita/MyFirstReactApp/static/js/runtime-main.63ed6bad.js.map",
+    "static/js/2.d4a8b3a3.chunk.js": "/EfanovNikita/MyFirstReactApp/static/js/2.d4a8b3a3.chunk.js",
+    "static/js/2.d4a8b3a3.chunk.js.map": "/EfanovNikita/MyFirstReactApp/static/js/2.d4a8b3a3.chunk.js.map",
+    "index.html": "/EfanovNikita/MyFirstReactApp/index.html",
+    "precache-manifest.5aab2b5b8e96757ed7b7d9debb56d85a.js": "/EfanovNikita/MyFirstReactApp/precache-manifest.5aab2b5b8e96757ed7b7d9debb56d85a.js",
+    "service-worker.js": "/EfanovNikita/MyFirstReactApp/service-worker.js",
+    "static/css/main.11c06f80.chunk.css.map": "/EfanovNikita/MyFirstReactApp/static/css/main.11c06f80.chunk.css.map",
+    "static/js/2.d4a8b3a3.chunk.js.LICENSE.txt": "/EfanovNikita/MyFirstReactApp/static/js/2.d4a8b3a3.chunk.js.LICENSE.txt",
+    "static/media/avatar.svg": "/EfanovNikita/MyFirstReactApp/static/media/avatar.b6af28a5.svg",
+    "static/media/github-logo_icon-2.svg": "/EfanovNikita/MyFirstReactApp/static/media/github-logo_icon-2.76d344f0.svg",
+    "static/media/vk-icon.svg": "/EfanovNikita/MyFirstReactApp/static/media/vk-icon.70cc8ed5.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.63ed6bad.js",
+    "static/js/2.d4a8b3a3.chunk.js",
+    "static/css/main.11c06f80.chunk.css",
+    "static/js/main.ecf46ba7.chunk.js"
+  ]
+}
