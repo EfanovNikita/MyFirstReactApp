@@ -7,18 +7,18 @@
 
 .photoBox {
     position: relative;
-    width: 100%;
+    max-width: 100%;
 }
 
 .photo {
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
+    max-width: 100%;
 }
 
 .photo img {
-    width: 100%;
-    height: 100%;
+    max-width: 100%;
 }
 
 .profileInfo .infoBox {
@@ -45,4 +45,5 @@
     border: 2px solid black;
     justify-content: center;
     align-content: center;
+    max-width: 100%;
 }
