@@ -21,7 +21,7 @@ const ProfileInfo = (props) => {
 
     return (
         <div className={style.profileInfo}>
-            <div className={style.photoBox}>
+            <div className={style.photoBox}> 
                 <div className={style.photo}>
                     <img src={largePhoto || avatar} alt='avatar' ></img>
                     {props.isOwner &&

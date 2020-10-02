@@ -4,6 +4,13 @@
     width: auto;
     margin: 5px 0;
 }
+@media(max-width: 426px) {
+    .paginatorBox {
+        display: block;
+        margin: 5px;
+        font-size: 90%;
+    }
+}
 
 .pages {
     grid-column: 2 / 3;

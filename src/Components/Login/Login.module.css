@@ -5,6 +5,11 @@
     min-height: 300px;
     margin: auto 25%;
 }
+@media(max-width: 426px) {
+    .gridBox {
+        margin: auto;
+    }
+}
 
 .gridBox label {
     padding-left: 10px;

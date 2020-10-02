@@ -1,6 +1,7 @@
 
 .wrapper {
   min-height: 100vh;
+  /*min-width: 100vw;*/
   display: grid;
   grid-template: minmax(70px, auto) 1fr minmax(70px, auto) / 1fr;
   grid-template-areas: "header" "main" "footer";

@@ -3,6 +3,11 @@
     display: grid;
     grid-auto-rows: 40px;
 }
+@media(max-width: 426px) {
+    .nav {
+        display: none;
+    }
+}
 
 .nav a {
     padding-top: 8px;

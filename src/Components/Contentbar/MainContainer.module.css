@@ -1,7 +1,12 @@
 .main {
     grid-area: main;
+    max-width: 100vw;
     background-color: #f0daa4;
     display: grid;
-    grid-template: 1fr / minmax(50px, 1fr) minmax(auto, 6fr);
+    grid-template: 1fr / minmax(100px, 1fr) minmax(600px, 6fr);
 }
-  
+@media(max-width: 426px) {
+    .main {
+        display: block;
+    }
+}

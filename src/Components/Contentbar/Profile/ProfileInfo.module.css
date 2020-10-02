@@ -4,16 +4,19 @@
     grid-template: 1fr / 1fr 2fr;
     margin: 10px;
 }
+@media(max-width: 426px) {
+    .profileInfo {
+        display: block;
+        margin: 10px auto;
+    }
+}
 
 .photoBox {
-    position: relative;
-    max-width: 100%;
+    display: flex;
+    justify-content: center;
 }
 
 .photo {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
     max-width: 100%;
 }
 
@@ -22,11 +25,15 @@
 }
 
 .profileInfo .infoBox {
-    padding: 0 10px;
+    padding: 10px 10px;
 }
 
 .profileInfo .infoBox .contacts {
     margin-left: 10px;
+}
+
+.profileInfo a {
+   word-wrap: break-word;
 }
 
 .button {
@@ -46,4 +53,6 @@
     justify-content: center;
     align-content: center;
     max-width: 100%;
+    position: relative;
+    top: -8px;
 }

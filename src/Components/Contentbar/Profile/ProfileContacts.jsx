@@ -9,7 +9,7 @@ const ProfileContacts = ({ profile }) => {
             <div><b>В поисках работы:</b> {profile.lookingForAJob ? 'Да' : 'Нет'}</div>
             <div><b>Мои навыки:</b> {profile.lookingForAJobDescription} </div>
             <div><b>Контакты:</b> {Object.keys(profile.contacts).map(key => {
-                return <div key={key} className={style.contacts}><p><b>{key}:   </b><a href={profile.contacts[key]}>{profile.contacts[key] || '------'}</a></p></div>
+                return <div key={key} className={style.contacts}><p><b>{key}:   </b><a href={profile.contacts[key]}>{profile.contacts[key] || ''}</a></p></div>
             })}
             </div>
         </div>
@@ -20,18 +20,18 @@ const ProfileContactsForm = ({ profile, setEditMode, setProfileChange }) => {
 
     const formik = useFormik({
         initialValues: {
-            aboutMe: profile.aboutMe || '------',
+            aboutMe: profile.aboutMe || '',
             lookingForAJob: profile.lookingForAJob,
-            lookingForAJobDescription: profile.lookingForAJobDescription || '------',
+            lookingForAJobDescription: profile.lookingForAJobDescription || '',
             contacts: {
-                facebook: profile.contacts.facebook,
-                website: profile.contacts.website,
-                vk: profile.contacts.vk,
-                twitter: profile.contacts.twitter,
-                instagram: profile.contacts.instagram,
-                youtube: profile.contacts.youtube,
-                github: profile.contacts.github,
-                mainLink: profile.contacts.mainLink,
+                facebook: profile.contacts.facebook || '',
+                website: profile.contacts.website || '',
+                vk: profile.contacts.vk || '',
+                twitter: profile.contacts.twitter || '',
+                instagram: profile.contacts.instagram || '',
+                youtube: profile.contacts.youtube || '',
+                github: profile.contacts.github || '',
+                mainLink: profile.contacts.mainLink || '',
             }
         },
         onSubmit: values => {
@@ -80,14 +80,13 @@ const ProfileContactsForm = ({ profile, setEditMode, setProfileChange }) => {
                     defaultChecked={!formik.values.lookingForAJob}
                 ></input> нет
             </div>
-
             <div>
                 <label htmlFor='lookingForAJobDescription'><b>Мои навыки: </b></label>
                 <input
                     id='lookingForAJobDescription'
                     name='lookingForAJobDescription'
-                    type='textarea'
-                    value={profile.lookingForAJobDescription}
+                    type='text'
+                    value={formik.lookingForAJobDescription}
                     onChange={formik.handleChange}
                     onBlur={formik.handleBlur}
                 />

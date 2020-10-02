@@ -10,7 +10,7 @@
 
 .userElem a {
     display: block;
-    width: 50%;
+    width: 80%;
     margin: auto;
 }
 
@@ -25,4 +25,12 @@
     margin: 0px 20%;
     background-color: #7dbdf8;
     cursor: pointer;
+    text-align: center;
+}
+@media(max-width: 426px) {
+    .followButton {
+        width: 100%;
+        margin: 0;
+        font-size: 70%;
+    }
 }
