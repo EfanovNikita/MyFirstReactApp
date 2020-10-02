@@ -1,25 +1,25 @@
 {
   "files": {
-    "main.css": "/MyFirstReactApp/static/css/main.11c06f80.chunk.css",
-    "main.js": "/MyFirstReactApp/static/js/main.091cc63f.chunk.js",
-    "main.js.map": "/MyFirstReactApp/static/js/main.091cc63f.chunk.js.map",
+    "main.css": "/MyFirstReactApp/static/css/main.166b35bf.chunk.css",
+    "main.js": "/MyFirstReactApp/static/js/main.a2eec7b9.chunk.js",
+    "main.js.map": "/MyFirstReactApp/static/js/main.a2eec7b9.chunk.js.map",
     "runtime-main.js": "/MyFirstReactApp/static/js/runtime-main.fcc58843.js",
     "runtime-main.js.map": "/MyFirstReactApp/static/js/runtime-main.fcc58843.js.map",
-    "static/js/2.a469b24f.chunk.js": "/MyFirstReactApp/static/js/2.a469b24f.chunk.js",
-    "static/js/2.a469b24f.chunk.js.map": "/MyFirstReactApp/static/js/2.a469b24f.chunk.js.map",
+    "static/js/2.f458b929.chunk.js": "/MyFirstReactApp/static/js/2.f458b929.chunk.js",
+    "static/js/2.f458b929.chunk.js.map": "/MyFirstReactApp/static/js/2.f458b929.chunk.js.map",
     "index.html": "/MyFirstReactApp/index.html",
-    "precache-manifest.fcd939714c1e82a33fcf6109f76a883a.js": "/MyFirstReactApp/precache-manifest.fcd939714c1e82a33fcf6109f76a883a.js",
+    "precache-manifest.50389ba1cd085d095261ade641dd4351.js": "/MyFirstReactApp/precache-manifest.50389ba1cd085d095261ade641dd4351.js",
     "service-worker.js": "/MyFirstReactApp/service-worker.js",
-    "static/css/main.11c06f80.chunk.css.map": "/MyFirstReactApp/static/css/main.11c06f80.chunk.css.map",
-    "static/js/2.a469b24f.chunk.js.LICENSE.txt": "/MyFirstReactApp/static/js/2.a469b24f.chunk.js.LICENSE.txt",
+    "static/css/main.166b35bf.chunk.css.map": "/MyFirstReactApp/static/css/main.166b35bf.chunk.css.map",
+    "static/js/2.f458b929.chunk.js.LICENSE.txt": "/MyFirstReactApp/static/js/2.f458b929.chunk.js.LICENSE.txt",
     "static/media/avatar.svg": "/MyFirstReactApp/static/media/avatar.b6af28a5.svg",
     "static/media/github-logo_icon-2.svg": "/MyFirstReactApp/static/media/github-logo_icon-2.76d344f0.svg",
     "static/media/vk-icon.svg": "/MyFirstReactApp/static/media/vk-icon.70cc8ed5.svg"
   },
   "entrypoints": [
     "static/js/runtime-main.fcc58843.js",
-    "static/js/2.a469b24f.chunk.js",
-    "static/css/main.11c06f80.chunk.css",
-    "static/js/main.091cc63f.chunk.js"
+    "static/js/2.f458b929.chunk.js",
+    "static/css/main.166b35bf.chunk.css",
+    "static/js/main.a2eec7b9.chunk.js"
   ]
 }
