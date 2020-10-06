@@ -13,7 +13,7 @@ const Paginator = (props) => {
     for (let i = 1; i <= countPages; i++) {
         let page;
         if (i === props.currentPage) {
-            page = <div className={style.button} onClick={onClickPage} key={i}><b> {i} </b></div>;
+            page = <div className={style.button + ' ' + style.currentPageButton} onClick={onClickPage} key={i}><b> {i} </b></div>;
         } else {
             page = <div className={style.button} onClick={onClickPage} key={i}><span> {i} </span></div>;
         };

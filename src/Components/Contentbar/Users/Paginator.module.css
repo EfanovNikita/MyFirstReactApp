@@ -18,18 +18,33 @@
     grid-gap: 1px;
     grid-template: 1fr / repeat(9, 1fr);
 }
+@media(max-width: 426px) {
+    .pages {
+        height: 40px;
+    }
+}
 
 .button {
-    display: block;
+    display: inline-block;
     width: auto;
     height: auto;
     background-color: #7dbdf8;
     color: black;
     text-align: center;
+    vertical-align: middle;
     cursor: pointer;
+}
+@media(max-width: 426px) {
+    .button {
+        line-height: 40px;
+    }
 }
 
 .button:active {
     background-color: #4d8ec7;
     color: black;
+}
+
+.currentPageButton {
+    border: 1px solid black;
 }

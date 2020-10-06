@@ -4,7 +4,7 @@ import { NavLink } from 'react-router-dom';
 
 const Navbar = (props) => {
     return (
-        <div className={style.nav}>
+        <nav className={style.nav}>
 
             <NavLink to='/profile' activeClassName={style.activeButton}>
                 <div>Моя страница</div>
@@ -13,7 +13,7 @@ const Navbar = (props) => {
             <NavLink to='/users' activeClassName={style.activeButton}>
                 <div>Пользователи</div>
             </NavLink>
-        </div>
+        </nav>
     )
 }
 

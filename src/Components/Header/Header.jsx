@@ -11,13 +11,13 @@ const Header = (props) => {
     };
 
     return (
-        <div className={style.header}>
+        <header className={style.header}>
             {props.isAuth
                 ? <div className={style.loginButton} onClick={logout}><button>Выйти</button></div>
                 : <div className={style.loginButton}>
                     <NavLink to='/login'><button>Войти</button></NavLink></div>
             }
-            <div className={style.menuBurger}>
+            <nav className={style.menuBurger}>
                 <div className={style.burger}></div>
                 <div className={style.menuList}>
                     <NavLink to='/profile'><div>Мой профиль</div></NavLink>
@@ -27,8 +27,8 @@ const Header = (props) => {
                         : <NavLink to='/login'><div>Войти</div></NavLink>
                     }
                 </div>
-            </div>
-        </div>
+            </nav>
+        </header>
     )
 }
 
