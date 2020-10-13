@@ -56,7 +56,7 @@ const ProfileContactsForm = ({ profile, setEditMode, setProfileChange }) => {
                     type='text'
                     id='aboutMe'
                     name='aboutMe'
-                    value={formik.aboutMe}
+                    value={formik.values.aboutMe}
                     onChange={formik.handleChange}
                     onBlur={formik.handleBlur}
                 />
@@ -82,13 +82,14 @@ const ProfileContactsForm = ({ profile, setEditMode, setProfileChange }) => {
             </div>
             <div>
                 <label htmlFor='lookingForAJobDescription'><b>Мои навыки: </b></label>
-                <input
+                <textarea
                     id='lookingForAJobDescription'
                     name='lookingForAJobDescription'
                     type='text'
-                    value={formik.lookingForAJobDescription}
+                    value={formik.values.lookingForAJobDescription}
                     onChange={formik.handleChange}
                     onBlur={formik.handleBlur}
+                    rows="3"
                 />
             </div>
             <div>
@@ -125,7 +126,7 @@ const ContactsContainer = ({ profile, isOwner, setProfileChange }) => {
             {!isOwner ? <ProfileContacts profile={profile} />
                 : isEditMode ? <ProfileContactsForm profile={profile} setEditMode={setEditMode} setProfileChange={setProfileChange} />
                     : <ProfileContacts profile={profile} />}
-            {!isEditMode && isOwner ? <button onClick={() => { setEditMode(true) }} className={style.button}>Редактировать</button> : null}
+            {!isEditMode && isOwner ? <button onClick={() => { setEditMode(true) }} className={style.button + ' ' + style.changeButton}>Редактировать</button> : null}
         </div>
     )
 }
