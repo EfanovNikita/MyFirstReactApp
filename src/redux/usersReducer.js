@@ -31,6 +31,7 @@ const usersReducer = (state=initialState, action) => {
                     } else {
                         return item
                     }})
+                
             }
         default: return state
     }
@@ -40,9 +41,9 @@ const setUsers = (users) => ({type: SET_USERS, users});
 const setTotalCount = (totalCount) => ({type: SET_TOTAL_COUNT, totalCount});
 const setFollowed = (follow, userId) => ({type: SET_FOLLOW, follow, userId});
 
-export const getUsersThunk = (page, friend=false, term='',count=10) => {
+export const getUsersThunk = (page, term='',count=10, friend='') => {
     return (dispatch) => {
-        userAPI.getUsers(page, friend, term, count).then(response => {
+        userAPI.getUsers(page, term, count, friend).then(response => {
             let users = response.data.items;
             let totalCount = response.data.totalCount;
             dispatch(setUsers(users));

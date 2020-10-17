@@ -41,8 +41,8 @@ export const profileAPI = {
 };
 
 export const userAPI = {
-    getUsers(page, friend, term, count) {
-        return instance.get(`users?page=${page}&count=${count}&friend=${friend}&term=${term}`);
+    getUsers(page, term, count, friend) {
+        return instance.get(`users?page=${page}&count=${count}&term=${term}&friend=${friend}`);
     },
     follow(userId) {
         return instance.post(`follow/${userId}`)

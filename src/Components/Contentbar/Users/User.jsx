@@ -26,22 +26,25 @@ const User = (props) => {
     return (
         <div className={style.userGrid}>
             <div className={style.userElem}>
-                <NavLink to={'/profile/' + props.id} >
-                    {props.photo !== null ?
-                        <img src={props.photo} alt='avatar' className={style.avatar}></img> :
-                        <img src={avatar} alt='avatar' className={style.avatar}></img>}
+                <NavLink to={'/profile/' + props.id} className={style.photoBox}>
+                    <img src={props.photo !== null ? props.photo : avatar} 
+                        alt='avatar' className={style.avatar} />
                 </NavLink>
                 <div >
-                    {props.isAuth ?
-                        props.followed ?
-                            <button className={style.followButton} onClick={unfollow} disabled={followProgress} >Unfollow</button> :
-                            <button className={style.followButton} onClick={follow} disabled={followProgress} >Follow</button> :
+                    {props.isAuth ? 
+                        <button className={style.followButton} 
+                            onClick={props.followed ? unfollow : follow} 
+                            disabled={followProgress} >
+                                {props.followed ? 'Unfollow' : 'Follow'}
+                        </button> :
                         null
                     }
                 </div>
             </div>
             <div className={style.userElem}>
-                <div>{props.name}</div>
+                <NavLink to={'/profile/' + props.id} className={style.username}>
+                    {props.name}
+                </NavLink>
             </div>
         </div>
     )

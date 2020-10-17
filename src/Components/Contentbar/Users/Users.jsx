@@ -25,7 +25,7 @@ const Users = (props) => {
                     setFollowedThunk={props.setFollowedThunk}
                     isSettingFollow={props.isSettingFollow}
                     isAuth={props.isAuth}
-                    key={user.id} />
+                    key={user.id + user.name} />
             })
         };
         setUsers(users);
