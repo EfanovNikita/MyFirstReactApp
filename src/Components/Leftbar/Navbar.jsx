@@ -7,11 +7,13 @@ const Navbar = (props) => {
         <nav className={style.nav}>
 
             <NavLink to='/profile' activeClassName={style.activeButton}>
-                <div>Моя страница</div>
+                <span className={"entypo-user" + " " + style.icon}></span>
+                Мой профиль
             </NavLink>
 
             <NavLink to='/users' activeClassName={style.activeButton}>
-                <div>Пользователи</div>
+                <span className={"entypo-users" + " " + style.icon}></span>
+                Пользователи
             </NavLink>
         </nav>
     )

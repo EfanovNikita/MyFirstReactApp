@@ -21,6 +21,7 @@
     background-color: #e5be5f;
 }
 
-.nav a:first-child {
-    padding-top: 8px;
+.icon {
+    display: inline-block;
+    margin-right: 10px;
 }

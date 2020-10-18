@@ -1,7 +1,22 @@
 
+/*icons*/
+@import url(https://weloveiconfonts.com/api/?family=brandico|entypo|zocial);
+
+[class*="brandico-"]:before {
+  font-family: 'brandico', sans-serif;
+}
+
+[class*="entypo-"]:before {
+  font-family: 'entypo', sans-serif;
+}
+
+[class*="zocial-"]:before {
+  font-family: 'zocial', sans-serif;
+}
+/**********/
+
 .wrapper {
   min-height: 100vh;
-  /*min-width: 100vw;*/
   display: grid;
   grid-template: minmax(70px, auto) 1fr minmax(70px, auto) / 1fr;
   grid-template-areas: "header" "main" "footer";

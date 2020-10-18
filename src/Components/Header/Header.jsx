@@ -12,10 +12,17 @@ const Header = (props) => {
 
     return (
         <header className={style.header}>
-            {props.isAuth
-                ? <div className={style.loginButton} onClick={logout}><button>Выйти</button></div>
-                : <div className={style.loginButton}>
-                    <NavLink to='/login'><button>Войти</button></NavLink></div>
+            {props.isAuth ?
+                <div className={style.loginButton}>
+                    <div className={style.button} onClick={logout}>
+                        <span className={'entypo-logout' + ' ' + style.out}></span>
+                    </div>
+                </div> :
+                <div className={style.loginButton}>
+                    <NavLink to='/login' className={style.button}>
+                        <span className={'entypo-login' + ' ' + style.in}></span>
+                    </NavLink>
+                </div>
             }
             <nav className={style.menuBurger}>
                 <div className={style.burger}></div>
