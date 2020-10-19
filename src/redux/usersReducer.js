@@ -41,9 +41,9 @@ const setUsers = (users) => ({type: SET_USERS, users});
 const setTotalCount = (totalCount) => ({type: SET_TOTAL_COUNT, totalCount});
 const setFollowed = (follow, userId) => ({type: SET_FOLLOW, follow, userId});
 
-export const getUsersThunk = (page, term='',count=10, friend='') => {
+export const getUsersThunk = (page, term='', friend='', count=10) => {
     return (dispatch) => {
-        userAPI.getUsers(page, term, count, friend).then(response => {
+        userAPI.getUsers(page, term, friend, count).then(response => {
             let users = response.data.items;
             let totalCount = response.data.totalCount;
             dispatch(setUsers(users));

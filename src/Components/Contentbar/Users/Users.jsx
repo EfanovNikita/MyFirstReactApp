@@ -4,15 +4,18 @@ import { getUsersThunk, setFollowedThunk } from '../../../redux/usersReducer';
 import User from './User';
 import Paginator from './Paginator';
 import Preloader from '../../Images/Preloader';
+import style from './Users.module.css';
 
 const Users = (props) => {
 
     let [page, setPage] = useState(1);
     let [users, setUsers] = useState([]);
+    let [options, setOptions] = useState('');
+    let [term, setTerm] = useState('');
 
     useEffect(() => {
-        props.getUsersThunk(page);
-    }, [page]);
+        props.getUsersThunk(page, term, options);
+    }, [page, options, term]);
 
     useEffect(() => {
         let users = [];
@@ -35,12 +38,39 @@ const Users = (props) => {
         setPage(page);
     };
 
+    let setOptionsUsers = (e) => {
+        setOptions(e.target.value);
+    };
+
+    let onSetTerm = (e) => {
+        let value = e.target.previousSibling.value;
+        setTerm(value);
+    }
+
     if (props.users) {
         return (
             <div>
+                <div className={style.searchInput} >
+                    <input type="search" name="search users" id="search users" />
+                    <div for="search users" className={style.searchButton} onClick={onSetTerm}></div>
+                </div>
+                <div className={style.radio}>
+                    <label>
+                        <input type="radio" name="options" value="true" onClick={setOptionsUsers} />
+                        Только отслеживаемые
+                    </label>
+                    <label>
+                        <input type="radio" name="options" value="false" onClick={setOptionsUsers} />
+                        Только неотслеживаемые
+                    </label>
+                    <label>
+                        <input type="radio" name="options" value="" defaultChecked onClick={setOptionsUsers} />
+                        Все
+                    </label>
+                </div>
+                {users}
                 <Paginator onSetPage={onSetPage}
                     totalCount={props.totalCount} currentPage={page} />
-                {users}
             </div>
         )
     } else {
