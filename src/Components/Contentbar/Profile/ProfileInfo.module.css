@@ -33,12 +33,17 @@
     margin-left: 10px;
 }
 
+.profileInfo .infoBox .contacts p {
+    line-height: 15px;
+}
+
 .profileInfo a {
    word-wrap: break-word;
 }
 
 .button {
     background-color: #7dbdf8;
+    border-radius: 5px;
     cursor: pointer;
 }
 
@@ -53,6 +58,7 @@
     border: 2px solid black;
     justify-content: center;
     align-content: center;
+    vertical-align: middle;
     max-width: 100%;
     position: relative;
     top: -8px;
