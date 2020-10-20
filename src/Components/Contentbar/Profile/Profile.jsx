@@ -6,6 +6,7 @@ import { compose } from 'redux';
 import { withRouter } from 'react-router-dom';
 import LoginHook from '../../Hooks/LoginHook';
 import Preloader from '../../Images/Preloader';
+import style from './ProfileInfo.module.css';
 
 const Profile = React.memo((props) => {
 
@@ -30,7 +31,7 @@ const Profile = React.memo((props) => {
     }, [userId]);
 
     return (
-        <div>
+        <div className={style.profileContainer}>
             {!props.profile
                 ? <Preloader />
                 : <ProfileInfo profile={props.profile} isOwner={isOwner}

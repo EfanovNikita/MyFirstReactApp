@@ -1,9 +1,10 @@
 .nav {
+    grid-column: 2/3;
     background-color: none;
     display: grid;
     grid-auto-rows: 40px;
 }
-@media(max-width: 426px) {
+@media(max-width: 769px) {
     .nav {
         display: none;
     }
@@ -15,13 +16,14 @@
     vertical-align: bottom;
     color: black;
     text-decoration-line: none;
+    font-size: 14px;
 }
 
 .nav a:hover {
-    background-color: #e5be5f;
+    background-color: #c7e6f3;
 }
 
 .icon {
-    display: inline-block;
+    display: inline;
     margin-right: 10px;
 }

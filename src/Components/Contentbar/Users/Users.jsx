@@ -52,7 +52,7 @@ const Users = (props) => {
             <div>
                 <div className={style.searchInput} >
                     <input type="search" name="search users" id="search users" />
-                    <div for="search users" className={style.searchButton} onClick={onSetTerm}></div>
+                    <div className={style.searchButton} onClick={onSetTerm}></div>
                 </div>
                 <div className={style.radio}>
                     <label>

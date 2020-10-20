@@ -1,6 +1,6 @@
 .paginatorBox {
-    display: grid;
-    grid-template: auto / 1fr 1fr 1fr;
+    display: flex;
+    justify-content: center;
     width: auto;
     margin: 10px 0;
 }
@@ -13,9 +13,8 @@
 }
 
 .pages {
-    grid-column: 2 / 3;
     display: grid;
-    grid-gap: 1px;
+    grid-gap: 5px;
     grid-template: 1fr / repeat(9, 1fr);
 }
 @media(max-width: 426px) {
