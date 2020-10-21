@@ -27,7 +27,7 @@
     display: inline-block;
     width: auto;
     height: auto;
-    background-color: #7dbdf8;
+    background-color: #6eaad5;
     color: black;
     text-align: center;
     vertical-align: middle;
@@ -40,7 +40,7 @@
 }
 
 .button:active {
-    background-color: #4d8ec7;
+    background-color: #6ad8a7;
     color: black;
 }
 

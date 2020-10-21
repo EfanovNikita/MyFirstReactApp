@@ -1,4 +1,4 @@
-.gridBox {
+ed.gridBox {
     display: grid;
     grid-template: 25px 40px 30px 25px 40px 30px / 1fr;
     width: 300px;
@@ -16,10 +16,13 @@
 }
 
 .gridBox button {
-    background-color: #7dbdf8;
+    background-color: #6eaad5;
     height: 40px;
     margin-top: 15px;
     cursor: pointer;
+}
+.gridBox button:active {
+    background-color: #6ad8a7;
 }
 
 .gridBox img {
