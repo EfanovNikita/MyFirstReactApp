@@ -12,7 +12,9 @@ const Footer = (props) => {
                 </a>
             </div>
             <div className={style.icon}>
-                <a href="https://github.com/EfanovNikita"><img src={github_icon} alt='git_icon' className={style.git_icon}/></a>
+                <a href="https://github.com/EfanovNikita">
+                    <img src={github_icon} alt='git_icon' className={style.git_icon}/>
+                </a>
             </div>
         </footer>
     )

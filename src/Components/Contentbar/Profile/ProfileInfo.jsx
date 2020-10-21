@@ -27,7 +27,7 @@ const ProfileInfo = (props) => {
                     {props.isOwner &&
                         <div>
                             <input id='changePhotoButton' type='file' className={style.changePhotoButton} onChange={setNewPhoto} />
-                            <label htmlFor='changePhotoButton' className={style.label + ' ' + style.button}>Изменить фото</label>
+                            <label htmlFor='changePhotoButton' className={`${style.label} ${style.button}`}>Изменить фото</label>
                         </div>}
                 </div>
             </div>
