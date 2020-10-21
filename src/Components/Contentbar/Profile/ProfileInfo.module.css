@@ -46,9 +46,12 @@
 }
 
 .button {
-    background-color: #7dbdf8;
+    background-color: #6eaad5;
     border-radius: 5px;
     cursor: pointer;
+}
+.button:active {
+    background-color: #6ad8a7;
 }
 
 .changePhotoButton {

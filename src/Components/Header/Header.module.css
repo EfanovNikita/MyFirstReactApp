@@ -1,6 +1,6 @@
 .header {
     grid-area: header;
-    background-color: #7dbdf8;
+    background-color: #29516D;
     display: grid;
     grid-template: 1fr / repeat(6, 1fr);
 }
@@ -20,18 +20,15 @@
     width: 50px;
     height: 50px;
     border-radius: 50%;
-    background-color: #f0daa4;
+    background-color: #f0e9e2;
     float: right;
     color: black;
     text-decoration: none;
     font-size: 25px;
     cursor: pointer;
 }
-.loginButton .button:hover {
-    background-color: #e5be5f;
-}
 .loginButton .button:active {
-    background-color: #be9e4c;
+    background-color: #6ad8a7;
 }
 
 .loginButton span {
@@ -60,7 +57,7 @@
 .menuBurger .burger {
     max-width: 50%;
     height: 2px;
-    background-color: #f0daa4;
+    background-color: #f0e9e2;
     position: relative;
     top: 40%;
     left: 25%;
@@ -70,7 +67,7 @@
     content: "";
     display: block;
     height: 2px;
-    background-color: #f0daa4;
+    background-color: #f0e9e2;
     position: relative;
     top: 10px;
 }
@@ -79,7 +76,7 @@
     content: "";
     display: block;
     height: 2px;
-    background-color: #f0daa4;
+    background-color:#f0e9e2;
     position: relative;
     top: -12px;
 }
@@ -88,7 +85,7 @@
     position: absolute;
     right: 0px;
     top: 0px;
-    background-color: #f0daa4;
+    background-color:#f0e9e2;
     border: 1px solid black;
     overflow: hidden;
     z-index: -1;
