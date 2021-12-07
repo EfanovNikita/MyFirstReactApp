@@ -1,4 +1,4 @@
-ed.gridBox {
+.gridBox {
     display: grid;
     grid-template: 25px 40px 30px 25px 40px 30px / 1fr;
     width: 300px;
