@@ -4,6 +4,9 @@ import { getUsersThunk, setFollowedThunk } from '../../../redux/usersReducer';
 import User from './User';
 import Paginator from './Paginator';
 import Preloader from '../../Images/Preloader';
+import { withRouter } from 'react-router-dom';
+import LoginHook from '../../Hooks/LoginHook';
+import { compose } from 'redux';
 import style from './Users.module.css';
 
 const Users = (props) => {
@@ -87,4 +90,4 @@ let mapStateToProps = (state) => ({
     isAuth: state.auth.isAuth
 })
 
-export default connect(mapStateToProps, { getUsersThunk, setFollowedThunk })(Users);
+export default compose(withRouter, LoginHook, connect(mapStateToProps, { getUsersThunk, setFollowedThunk }))(Users);
