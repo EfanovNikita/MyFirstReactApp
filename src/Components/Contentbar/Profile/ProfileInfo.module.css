@@ -37,6 +37,14 @@
     margin-left: 10px;
 }
 
+.profileInfo .infoBox .contactsForm {
+    margin-left: 10px;
+    margin-bottom: 10px;
+    min-height: 25px;
+    display: grid;
+    grid-template: 1fr / 30% 1fr;
+}
+
 .profileInfo .infoBox .contacts p {
     line-height: 14px;
 }

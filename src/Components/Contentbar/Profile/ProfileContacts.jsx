@@ -96,8 +96,8 @@ const ProfileContactsForm = ({ profile, setEditMode, setProfileChange }) => {
                 <b>Контакты:</b>
                 {Object.keys(profile.contacts).map(key => {
                     return (
-                        <div key={key} className={style.contacts}>
-                            <p>
+                        <div key={key} className={style.contactsForm}>
+                            
                                 <label htmlFor={`contacts.${key}`}><b>{key}: </b></label>
                                 <input
                                     id={`contacts.${key}`}
@@ -107,7 +107,7 @@ const ProfileContactsForm = ({ profile, setEditMode, setProfileChange }) => {
                                     onChange={formik.handleChange}
                                     onBlur={formik.handleBlur}
                                 />
-                            </p>
+                            
                         </div>
                     )
                 })}
