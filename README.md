@@ -1,7 +1,7 @@
 Приложение доступно по ссылке:https://efanovnikita.github.io/MyFirstReactApp/
 Данные для входа:
-Email: free@samuraijs.com
-Password: free
+Email: Efanov_nikitka@mail.ru
+Password: 06040502
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
